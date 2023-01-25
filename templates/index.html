@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{%static 'style.css'%}" />
+		<title>Dedan Wamalwa Blog</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="row">
+					<h1>Dedan Wamalwa's Blog</h1>
+					<h2>Hi, Welcome to my blog. Feel free to write anything</h2>
+				</div>
+				<div class="row">
+					{% for post in posts reversed%}
+					<div class="col-12">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.created_At }}</p>
+                        <p>{{ post.body }}</p>
+                    </div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+	</body>
+</html>
