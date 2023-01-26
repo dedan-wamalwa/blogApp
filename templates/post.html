@@ -11,20 +11,16 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="card">
+                <div class="card">
 					<h1>Dedan Wamalwa's Blog</h1>
 					<h2>Hi, Welcome to my blog. Feel free to write anything</h2>
 				</div>
 				<div class="card">
-					{% for post in posts reversed%}
-					{% comment %} <div class="col-12"> {% endcomment %}
-						<a class="text-decoration-none text-dark" href="/post/{{post.id}}">
-							<h3>{{ post.title }}</h3>
-							<p>{{ post.created_At }}</p>
-							<p>{{ post.body |truncatewords:40 }}</p>
-						</a>
-					{% comment %} </div> {% endcomment %}
-					{% endfor %}
+					<h1>{{ post.title }}</h1>
+					<h3>{{ post.created_At }}</h3>
+                    <p >
+                        {{ post.body }}
+                    </p>
 				</div>
 			</div>
 		</div>
